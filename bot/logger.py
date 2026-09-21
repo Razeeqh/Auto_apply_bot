@@ -1,0 +1,24 @@
+"""Console + file logging setup shared across the bot."""
+import logging
+from pathlib import Path
+
+
+def get_logger(name: str = "naukri_bot") -> logging.Logger:
+    logger = logging.getLogger(name)
+    if logger.handlers:
+        return logger
+
+    logger.setLevel(logging.INFO)
+
+    Path("logs").mkdir(exist_ok=True)
+    fmt = logging.Formatter("%(asctime)s [%(levelname)s] %(message)s", "%Y-%m-%d %H:%M:%S")
+
+    file_handler = logging.FileHandler("logs/bot.log", encoding="utf-8")
+    file_handler.setFormatter(fmt)
+
+    console_handler = logging.StreamHandler()
+    console_handler.setFormatter(fmt)
+
+    logger.addHandler(file_handler)
+    logger.addHandler(console_handler)
+    return logger

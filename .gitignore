@@ -1,0 +1,14 @@
+.env
+venv/
+.venv/
+__pycache__/
+*.pyc
+data/storage_state.json
+data/browser_profile/
+data/daily_apply_count.json
+data/seen_questions.json
+data/new_questions.yaml
+data/missing_apply.txt
+data/apply_issues.txt
+data/applied_jobs.json
+logs/

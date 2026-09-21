@@ -1,0 +1,58 @@
+profile:
+  total_experience_years: 6.3
+  primary_role: "Senior Azure Data Engineer"
+  core_skills:
+    - Azure Data Factory
+    - Azure Databricks
+    - Python
+    - PySpark
+    - SQL
+    - Snowflake
+    - DBT
+    - Airflow
+
+application_questions:
+  - question: "How many years of total experience do you have?"
+    normalized_key: total_experience
+    answer: 6.1
+
+  - question: "How many years of relevant experience do you have in Databricks?"
+    normalized_key: databricks_experience
+    answer: 5
+
+  - question: "What is your relevant experience in Azure Data Factory?"
+    normalized_key: adf_experience
+    answer: 5
+
+  - question: "What is your current CTC?"
+    normalized_key: current_ctc
+    answer: 22
+
+  - question: "What are your salary expectations?"
+    normalized_key: expected_ctc
+    answer: 26
+
+  - question: "What is your notice period?"
+    normalized_key: notice_period
+    answer: Immediate
+
+  - question: "Why are you looking for a change?"
+    normalized_key: reason_for_change
+    answer: Upskill
+
+  - question: "What is your current location?"
+    normalized_key: current_location
+    answer: Hyderabad
+
+  - question: "What is your preferred location?"
+    normalized_key: preferred_location
+    answer: Remote, hyderabad
+
+rules:
+  minimum_skill_match_percent: 50
+  apply_if_title_contains:
+    - "Data Engineer"
+  apply_if_skill_match_gte_percent: 50
+  never_invent_answers: true
+  collect_new_questions: true
+  deduplicate_questions: true
